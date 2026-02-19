@@ -38,7 +38,7 @@ bower_components
 build/Release
 
 # Dependency directories
-app/node_modules/
+node_modules/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -66,9 +66,9 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-app/.env
-app/.env.*
-app/!.env.example
+.env
+.env.*
+!.env.example
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -126,13 +126,13 @@ dist
 .vscode-test
 
 # yarn v3
-app/.pnp.*
-app/.yarn/*
-app/!.yarn/patches
-app/!.yarn/plugins
-app/!.yarn/releases
-app/!.yarn/sdks
-app/!.yarn/versions
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # Vite logs files
 vite.config.js.timestamp-*
