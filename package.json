@@ -5,7 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "dev": "tsx watch app/server.ts",
-    "knex": "tsx node_modules/.bin/knex"
+    "knex": "tsx node_modules/.bin/knex",
+    "migrate": "knex migrate:latest --knexfile ./app/knexfile.ts"
   },
   "keywords": [],
   "author": "",
