@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:18.2-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dev_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: ./app
+    container_name: node_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - ./app/.env
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+
