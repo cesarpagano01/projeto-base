@@ -1,5 +1,5 @@
 import express from 'express'
-import db from './database'
+import database from './database'
 
 const app = express()
 app.use(express.json())
@@ -11,7 +11,7 @@ app.listen(3000, () => {
 app.post('/users', async (request, response) => {
   const body = request.body
 
-  await db('users').insert({
+  await database('users').insert({
     name: body.name,
     email: body.email,
     password: body.password
@@ -22,7 +22,7 @@ app.post('/users', async (request, response) => {
 
 app.get("/users", async (request, response) => {
   try {
-    const users = await db("users").select("id", "name", "email");
+    const users = await database("users").select("id", "name", "email");
     return response.json(users);
   } catch (error) {
     response.status(500).json({ error: "Erro ao buscar usuários" });
